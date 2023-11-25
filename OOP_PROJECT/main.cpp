@@ -4,8 +4,7 @@ using namespace std;
 #include "menu.h"
 #include "student.h"
 int main()
-{
-	
+{	
 	managementsystem m;
 	m.run();
 

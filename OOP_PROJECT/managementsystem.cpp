@@ -15,16 +15,16 @@ void managementsystem::run()
             enrolledStudentMenu();
             break;
         case 2:
-            // courseRegistrationMenu();
+             courseRegistrationMenu();
             break;
         case 3:
-            //attendanceMenu();
+            attendanceMenu();
             break;
         case 4:
-            // marksMenu();
+             marksMenu();
             break;
         case 5:
-            //courseWithdrawMenu();
+            courseWithdrawMenu();
             break;
         case 6:
             cout << "Exiting the system.\n";
