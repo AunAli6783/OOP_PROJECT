@@ -1,6 +1,6 @@
 #include <iostream>
 using namespace std;
-#include "run.h"
+#include "managementsystem.h"
 #include "menu.h"
 #include "student.h"
 int main()

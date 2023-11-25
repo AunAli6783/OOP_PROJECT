@@ -18,7 +18,7 @@
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="run.cpp">
+    <ClCompile Include="managementsystem.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="menu.cpp">
@@ -26,7 +26,7 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="run.h">
+    <ClInclude Include="managementsystem.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="student.h">
