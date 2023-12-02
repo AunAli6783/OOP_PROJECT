@@ -1,16 +1,17 @@
 #pragma once
+
 #include <iostream>
+#include <string>
+#include "managementsystem.h"
 using namespace std;
-class Student {
+
+class Student
+{
 public:
     string name;
     int studentID;
 
-    Student() : name(""), studentID(0) {}
-
-    Student(string _name, int _studentID) 
-    {
-        name = _name;
-        studentID = _studentID;
-    }
+    Student();
+    Student(string, int);
 };
+

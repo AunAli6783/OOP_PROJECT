@@ -1,5 +1,7 @@
+#include <iostream>
+using namespace std;
 #include "menu.h"
-#include "managementsystem.h"
+//#include "managementsystem.h"
 
 void displayMainMenu()
 {
@@ -32,7 +34,7 @@ void enrolledStudentMenu()
             //  displayEnrolledStudents();
             break;
         case 2:
-            // addStudent();
+          // addStudent();
             break;
         case 3:
             //removeStudent();

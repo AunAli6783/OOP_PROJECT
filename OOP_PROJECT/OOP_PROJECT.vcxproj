@@ -130,11 +130,17 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="menu.cpp" />
     <ClCompile Include="managementsystem.cpp" />
+    <ClCompile Include="student.cpp" />
+    <ClCompile Include="system.cpp" />
+    <ClCompile Include="validation.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="global.h" />
     <ClInclude Include="menu.h" />
     <ClInclude Include="managementsystem.h" />
     <ClInclude Include="student.h" />
+    <ClInclude Include="system.h" />
+    <ClInclude Include="validation.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
