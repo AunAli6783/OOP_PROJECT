@@ -8,6 +8,8 @@ void managementsystem::run()
     do {
 
         displayMainMenu();
+        cout << endl;
+        cout << "Enter choice: ";
         cin >> choice;
 
         switch (choice) {
@@ -30,7 +32,9 @@ void managementsystem::run()
             cout << "Exiting the system.\n";
             break;
         default:
+
             cout << "Invalid choice. Please enter a number between 1 and 6.\n";
+            return;
         }
 
     } while (choice != 6);
@@ -61,6 +65,8 @@ void managementsystem::enrolledStudentMenu()
         cout << "4: Edit Student Detail" << endl;
         cout << "5: Back" << endl;
 
+      
+        cout << "Enter choice: ";
         cin >> choice;
 
         switch (choice) {
@@ -93,8 +99,11 @@ void managementsystem::courseRegistrationMenu() {
     do {
         cout << "1: Display Available Courses" << endl;
         cout << "2: Register Course" << endl;
-        cout << "3: Back" << endl;
+        cout << "3. Display Registered courses" << endl;
+        cout << "4: Back" << endl;
 
+        
+        cout << "Enter choice: ";
         cin >> choice;
 
         switch (choice) {
@@ -105,23 +114,30 @@ void managementsystem::courseRegistrationMenu() {
             registerCourse();
             break;
         case 3:
+            displayEnrolledCourses();
+            break;
+        case 4:
             void run();
             return;
+
         default:
             cout << "Invalid choice. Please enter a number between 1 and 3.\n";
         }
 
-    } while (choice != 3);
+    } while (choice != 4);
 }
 
 void managementsystem::courseWithdrawMenu() {
     int choice;
 
-    do {
+    do 
+    {
         cout << "1: Enrolled Courses" << endl;
         cout << "2: Drop a Course" << endl;
         cout << "3: Back" << endl;
 
+        
+        cout << "Enter choice: ";
         cin >> choice;
 
         switch (choice) {
@@ -145,11 +161,14 @@ void managementsystem::courseWithdrawMenu() {
 void managementsystem::attendanceMenu() {
     int choice;
 
-    do {
+    do 
+    {
         cout << "1: Display Attendance (Subject wise)" << endl;
         cout << "2: Mark Attendance" << endl;
         cout << "3: Back" << endl;
 
+        
+        cout << "Enter choice: ";
         cin >> choice;
 
         switch (choice) {
@@ -173,11 +192,13 @@ void managementsystem::attendanceMenu() {
 void managementsystem::marksMenu() {
     int choice;
 
-    do {
+    do 
+    {
         cout << "1: Display Marks (Subject wise)" << endl;
         cout << "2: Assign Marks" << endl;
         cout << "3: Back" << endl;
-
+        
+        cout << "Enter choice: ";
         cin >> choice;
 
         switch (choice) {

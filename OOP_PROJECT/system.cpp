@@ -102,6 +102,7 @@ system::system() //:studentCount(0)
             courseEnrollment[i][j] = false;
         }
     }
+    cout << endl;
 }
 
 
@@ -160,4 +161,51 @@ void system::registerCourse()
     }
     else
         cout << "The Student ID you Entered is not registered" << endl;
+    cout << endl;
 }
+
+void system:: displayEnrolledCourses()
+{
+    int studentID;
+
+    cout << "Enter student ID to display registered courses: ";
+    cin >> studentID;
+
+    int studentIndex = findStudent(studentID);
+
+    if (studentIndex != -1) 
+    {
+        cout << "Registered courses for " << students[studentIndex].name << ":\n";
+
+        bool has = false;
+
+        for (int i = 0; i < MAX_COURSES; ++i)
+        {
+            if (courseEnrollment[studentIndex][i])
+            {
+                if (courses[i].enrolled)
+                {  // Check if the course is still enrolled
+                    cout << courses[i].courseName << "\n";
+                    has = true;
+                }
+                else 
+                {
+                    cout << courses[i].courseName << " (Dropped)\n";
+                }
+            }
+        }
+
+        if (!has)
+        {
+            cout << "No enrolled courses found.\n";
+        }
+    }
+    else 
+    {
+        cout << "Student not found.\n";
+    }
+    cout << endl;
+}
+
+
+
