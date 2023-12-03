@@ -10,3 +10,10 @@ Student::Student(string _name, int _studentID)
     studentID = _studentID;
 }
 
+Course::Course():courseName(""), enrolled(false) {}
+
+Course::Course(string _courseName)
+{
+        courseName=_courseName;
+        enrolled = false;
+}

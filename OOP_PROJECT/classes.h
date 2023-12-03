@@ -16,4 +16,15 @@ public:
     Student(string, int);
 };
 
+class Course
+{
+public:
+    string courseName;
+    bool enrolled; // Track if the course is enrolled
+
+    Course();
+    Course(string);
+
+};
+
 
