@@ -14,6 +14,6 @@ class system:public validation
 	void removeStudent();
 	void editStudentDetails();
 	void displayAvailableCourses();
-
+	void registerCourse();
 };
 

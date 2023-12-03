@@ -102,7 +102,7 @@ void managementsystem::courseRegistrationMenu() {
             displayAvailableCourses();
             break;
         case 2:
-            //registerCourse();
+            registerCourse();
             break;
         case 3:
             void run();

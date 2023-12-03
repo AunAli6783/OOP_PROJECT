@@ -119,3 +119,45 @@ void system:: displayAvailableCourses()
     }
     cout << "\n";
 }
+
+
+void system::registerCourse()
+{
+    int courseIndex;
+    int sid;
+
+    cout << "Enter the student ID: ";
+    cin >> sid;
+    int studentIndex = findStudent(sid);
+
+    if (studentIndex != -1) {
+        cout << "Enter the number of the course to register: ";
+        cin >> courseIndex;
+
+        if (courseIndex >= 1 && courseIndex <= MAX_COURSES) {
+            Course& selectedCourse = courses[courseIndex - 1];
+
+            // Check if the course is enrolled
+            if (!selectedCourse.enrolled)
+            {
+                selectedCourse.enrolled = true;
+                // Assuming each student can register for a course only once
+                if (!courseEnrollment[studentIndex][courseIndex - 1]) {
+                    courseEnrollment[studentIndex][courseIndex - 1] = true;
+                    cout << "Course registration successful.\n";
+                }
+                else {
+                    cout << "You are already enrolled in this course.\n";
+                }
+            }
+            else {
+                cout << "Course not found or not enrolled.\n";
+            }
+        }
+        else {
+            cout << "Invalid course number.\n";
+        }
+    }
+    else
+        cout << "The Student ID you Entered is not registered" << endl;
+}

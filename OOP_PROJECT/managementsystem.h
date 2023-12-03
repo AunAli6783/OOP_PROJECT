@@ -6,7 +6,7 @@ using namespace std;
 
 class managementsystem :public system
 {
-public:
+  public:
 
     void run();
     void displayMainMenu();
