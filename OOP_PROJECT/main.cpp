@@ -1,12 +1,12 @@
 #include <iostream>
 using namespace std;
 
-#include "managementsystem.h"
+//#include "managementsystem.h"
+//#include "system.h"
 #include "menu.h"
-#include "student.h"
-#include "validation.h"
-#include "system.h"
-#include "global.h"
+//#include "student.h"
+//#include "validation.h"
+//#include "global.h"
 
 
 int main()

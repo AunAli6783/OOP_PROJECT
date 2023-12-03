@@ -1,6 +1,5 @@
 
 #include "system.h"
-
 using namespace std;
 
 void system::addStudent() 

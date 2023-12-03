@@ -1,9 +1,45 @@
 #include <iostream>
 using namespace std;
 #include "menu.h"
+//#include "system.h"
 //#include "managementsystem.h"
 
-void displayMainMenu()
+void managementsystem::run()
+{
+    int choice;
+    do {
+
+        displayMainMenu();
+        cin >> choice;
+
+        switch (choice) {
+        case 1:
+            enrolledStudentMenu();
+            break;
+        case 2:
+            courseRegistrationMenu();
+            break;
+        case 3:
+            attendanceMenu();
+            break;
+        case 4:
+            marksMenu();
+            break;
+        case 5:
+            courseWithdrawMenu();
+            break;
+        case 6:
+            cout << "Exiting the system.\n";
+            break;
+        default:
+            cout << "Invalid choice. Please enter a number between 1 and 6.\n";
+        }
+
+    } while (choice != 6);
+}
+
+
+void managementsystem::displayMainMenu()
 {
     cout << "Main Menu\n";
     cout << "1- Enroll a student\n";
@@ -15,7 +51,7 @@ void displayMainMenu()
     cout << "Press 1 to 6 to select an option: ";
 }
 
-void enrolledStudentMenu()
+void managementsystem::enrolledStudentMenu()
 {
 
     int choice;
@@ -34,7 +70,7 @@ void enrolledStudentMenu()
             //  displayEnrolledStudents();
             break;
         case 2:
-          // addStudent();
+            addStudent();
             break;
         case 3:
             //removeStudent();
@@ -53,7 +89,7 @@ void enrolledStudentMenu()
     } while (choice != 5);
 }
 
-void courseRegistrationMenu() {
+void managementsystem::courseRegistrationMenu() {
     int choice;
 
     do {
@@ -80,7 +116,7 @@ void courseRegistrationMenu() {
     } while (choice != 3);
 }
 
-void courseWithdrawMenu() {
+void managementsystem::courseWithdrawMenu() {
     int choice;
 
     do {
@@ -108,7 +144,7 @@ void courseWithdrawMenu() {
 }
 
 
-void attendanceMenu() {
+void managementsystem::attendanceMenu() {
     int choice;
 
     do {
@@ -130,13 +166,13 @@ void attendanceMenu() {
             void run();
             return;
         default:
-            std::cout << "Invalid choice. Please enter a number between 1 and 3.\n";
+            cout << "Invalid choice. Please enter a number between 1 and 3.\n";
         }
 
     } while (choice != 3);
 }
 
-void marksMenu() {
+void managementsystem::marksMenu() {
     int choice;
 
     do {
@@ -158,7 +194,7 @@ void marksMenu() {
             void run();
             return;
         default:
-            std::cout << "Invalid choice. Please enter a number between 1 and 3.\n";
+            cout << "Invalid choice. Please enter a number between 1 and 3.\n";
         }
 
     } while (choice != 3);

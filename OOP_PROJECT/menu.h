@@ -1,15 +1,26 @@
 #pragma once
 #include <iostream>
-#include "managementsystem.h"
+//#include "managementsystem.h"
 //#include "system.h"
 //#include"validation.h"
+//#include "global.h"
+#include "system.h"
 using namespace std;
 
-void displayMainMenu();
-void enrolledStudentMenu();
-void courseRegistrationMenu();
-void  attendanceMenu();
-void marksMenu();
-void courseWithdrawMenu();
+
+class managementsystem :public system
+{
+public:
+
+    void run();
+    void displayMainMenu();
+    void enrolledStudentMenu();
+    void courseRegistrationMenu();
+    void  attendanceMenu();
+    void marksMenu();
+    void courseWithdrawMenu();
+   
+};
+
 
 
