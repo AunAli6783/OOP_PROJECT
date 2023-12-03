@@ -65,16 +65,16 @@ void managementsystem::enrolledStudentMenu()
 
         switch (choice) {
         case 1:
-            //  displayEnrolledStudents();
+            displayEnrolledStudents();
             break;
         case 2:
             addStudent();
             break;
-        case 3:
-            //removeStudent();
+        case 3:  
+            removeStudent();
             break;
         case 4:
-            //editStudentDetails();
+            editStudentDetails();
             break;
         case 5:
             void run();
