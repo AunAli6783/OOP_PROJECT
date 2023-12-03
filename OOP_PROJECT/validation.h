@@ -12,6 +12,7 @@ public:
     validation() :studentCount(0) {}
 
     Student students[MAX_STUDENTS];
+    Course courses[MAX_COURSES];
 
 
     int findStudent(int)const;

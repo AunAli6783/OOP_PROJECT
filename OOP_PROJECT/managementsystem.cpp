@@ -99,7 +99,7 @@ void managementsystem::courseRegistrationMenu() {
 
         switch (choice) {
         case 1:
-            //displayAvailableCourses();
+            displayAvailableCourses();
             break;
         case 2:
             //registerCourse();

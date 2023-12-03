@@ -29,7 +29,6 @@ void system::addStudent()
     }
 }
 
-
 void system::displayEnrolledStudents() const
 {
     cout << "Enrolled Students:\n";
@@ -39,7 +38,6 @@ void system::displayEnrolledStudents() const
     }
     cout << "\n";
 }
-
 
 void system::removeStudent()
 {
@@ -84,4 +82,40 @@ void system::editStudentDetails()
     {
         cout << "Student with ID " << studentID << " not found.\n";
     }
+}
+
+system::system() //:studentCount(0)
+{
+    courses[0] = Course("Math");
+    courses[1] = Course("Physics");
+    courses[2] = Course("Chemistry");
+    courses[3] = Course("PakistanStudy");
+    courses[4] = Course("ComputerScience");
+    courses[5] = Course("Islamiat");
+    courses[6] = Course("Calculus");
+    courses[7] = Course("DLD");
+    courses[8] = Course("COAL");
+    courses[9] = Course("OOP");
+
+    for (int i = 0; i < MAX_STUDENTS; ++i) {
+        for (int j = 0; j < MAX_COURSES; ++j) {
+            courseEnrollment[i][j] = false;
+        }
+    }
+}
+
+
+void system:: displayAvailableCourses()
+{
+    cout << "Available Courses:\n";
+    for (int i = 0; i < MAX_COURSES; ++i) 
+    {
+        cout << i + 1 << "- " << courses[i].courseName;
+        if (courses[i].enrolled)
+        {
+            cout << " (Enrolled)";
+        }
+        cout << "\n";
+    }
+    cout << "\n";
 }
