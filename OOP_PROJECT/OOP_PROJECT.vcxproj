@@ -129,18 +129,14 @@
   <ItemGroup>
     <ClCompile Include="classes.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="menu.cpp" />
     <ClCompile Include="managementsystem.cpp" />
-    <ClCompile Include="student.cpp" />
     <ClCompile Include="system.cpp" />
     <ClCompile Include="validation.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="classes.h" />
     <ClInclude Include="global.h" />
-    <ClInclude Include="menu.h" />
     <ClInclude Include="managementsystem.h" />
-    <ClInclude Include="student.h" />
     <ClInclude Include="system.h" />
     <ClInclude Include="validation.h" />
   </ItemGroup>

@@ -1,12 +1,22 @@
 #pragma once
 #include <iostream>
-#include "menu.h"
 #include "system.h"
-#include "validation.h"
-//#include "student.h"
-
 
 using namespace std;
+
+class managementsystem :public system
+{
+public:
+
+    void run();
+    void displayMainMenu();
+    void enrolledStudentMenu();
+    void courseRegistrationMenu();
+    void  attendanceMenu();
+    void marksMenu();
+    void courseWithdrawMenu();
+   
+};
 
 
 
