@@ -16,6 +16,7 @@ class validation
 
 
     int findStudent(int)const;
+    int findCourse(const string&);
 };
 
 

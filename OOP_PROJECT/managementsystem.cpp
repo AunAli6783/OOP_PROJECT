@@ -178,7 +178,7 @@ void managementsystem::attendanceMenu() {
             displayAttendance();
             break;
         case 2:
-            //markAttendance();
+            markAttendance();
             break;
         case 3:
             void run();

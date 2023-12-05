@@ -253,3 +253,48 @@ void system::displayAttendance()
 	}
 }
 
+void system :: markAttendance()
+{
+	int studentID;
+	string courseName;
+	int daysPresent;
+
+	cout << "Enter student ID: ";
+	cin >> studentID;
+
+	int studentIndex = findStudent(studentID);
+
+	if (studentIndex != -1) 
+	{
+		cout << "Enter course name: ";
+		cin >> courseName;
+
+		int courseIndex = findCourse(courseName);
+
+		if (courseIndex != -1 && courses[courseIndex].enrolled && courseEnrollment[studentIndex][courseIndex])
+		{
+			cout << "Enter days present for " << students[studentIndex].name << " in " << courseName << ": ";
+			cin >> daysPresent;
+
+			// Update only the attendance for the specific course if enrolled
+			if (courseEnrollment[studentIndex][courseIndex]) 
+			{
+				attendance[studentIndex * MAX_COURSES + courseIndex] = Attendance(studentID, courseName, daysPresent);
+				cout << "Attendance marked successfully.\n";
+			}
+			else
+			{
+				cout << "Student not enrolled in the specified course.\n";
+			}
+		}
+		else
+		{
+			cout << "Course not found or not enrolled.\n";
+		}
+	}
+	else 
+	{
+		cout << "Student not found.\n";
+	}
+}
+

@@ -21,5 +21,7 @@ class system:public validation
 	void displayEnrolledCourses();
 
 	void displayAttendance();
+	void markAttendance();
+
 };
 

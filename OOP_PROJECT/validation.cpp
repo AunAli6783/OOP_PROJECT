@@ -1,5 +1,6 @@
 #include "validation.h"
 
+using namespace std;
 
 int validation::findStudent(int studentID)const
 {
@@ -13,5 +14,17 @@ int validation::findStudent(int studentID)const
     return -1; // Not found
 }
 
+
+int validation ::findCourse(const string& courseName)
+{
+    for (int i = 0; i < MAX_COURSES; ++i)
+    {
+        if (courses[i].courseName == courseName)
+        {
+            return i;
+        }
+    }
+    return -1; // Not found
+}
 
 
