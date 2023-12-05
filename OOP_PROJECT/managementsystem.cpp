@@ -171,10 +171,11 @@ void managementsystem::attendanceMenu() {
         cout << "Enter choice: ";
         cin >> choice;
 
-        switch (choice) {
+        switch (choice) 
+        {
             // Add code for handling attendance options
         case 1:
-            //displayAttendance();
+            displayAttendance();
             break;
         case 2:
             //markAttendance();

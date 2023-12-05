@@ -4,16 +4,25 @@ using namespace std;
 
 Student::Student() : name(""), studentID(0) {}
 
-Student::Student(string _name, int _studentID)
+Student::Student(string _name, int id)
 {
     name = _name;
-    studentID = _studentID;
+    studentID = id;
 }
 
 Course::Course():courseName(""), enrolled(false) {}
 
-Course::Course(string _courseName)
+Course::Course(string cname)
 {
-        courseName=_courseName;
+        courseName=cname;
         enrolled = false;
+}
+
+Attendance::Attendance() : studentID(0), daysPresent(0) {}
+
+Attendance::Attendance(int id, string cname, int present) 
+{
+    studentID = id;
+    courseName = cname;
+    daysPresent=present;
 }

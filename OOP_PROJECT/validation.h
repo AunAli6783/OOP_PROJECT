@@ -6,7 +6,7 @@ using namespace std;
 
 class validation
 {
-public:
+  public:
 
     int studentCount = 0;
     validation() :studentCount(0) {}

@@ -28,3 +28,13 @@ public:
 };
 
 
+class Attendance
+{
+ public:
+    int studentID;
+    string courseName;
+    int daysPresent;
+
+    Attendance();
+    Attendance(int,string,int);
+};
