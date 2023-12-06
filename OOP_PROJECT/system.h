@@ -25,6 +25,7 @@ class system:public validation
 	void markAttendance();
 
 	void displayMarks();
+	void assignMarks();
 
 };
 

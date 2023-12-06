@@ -205,10 +205,10 @@ void managementsystem::marksMenu() {
         switch (choice) {
             // Add code for handling marks options
         case 1:
-           // displayMarks();
+            displayMarks();
             break;
         case 2:
-            //assignMarks();
+             assignMarks();
             break;
         case 3:
             void run();

@@ -320,3 +320,42 @@ void system:: displayMarks()
 		cout << "Student not found.\n";
 	}
 }
+
+ void system::assignMarks()
+ {
+	int studentID;
+	string courseName;
+	float studentMarks;  // Use a different name for the variable to store marks
+
+	cout << "Enter student ID: ";
+	cin >> studentID;
+
+	int studentIndex = findStudent(studentID);
+
+	if (studentIndex != -1)
+	{
+		cout << "Enter course name: ";
+		cin >> courseName;
+
+		int courseIndex = findCourse(courseName);
+
+		if (courseIndex != -1 && courses[courseIndex].enrolled && courseEnrollment[studentIndex][courseIndex])
+		{
+			cout << "Enter marks for " << students[studentIndex].name << " in " << courseName << ": ";
+			cin >> studentMarks;
+
+			// Use a different name for the variable to store marks
+			marks[studentIndex * MAX_COURSES + courseIndex] = Marks(studentID, courseName, studentMarks);
+			cout << "Marks assigned successfully.\n";
+		}
+		else 
+		{
+		 cout << "Course not found, not enrolled, or marks cannot be assigned for this course.\n";
+		}
+	}
+	else 
+	{
+		cout << "Student not found.\n";
+	}
+}
+
