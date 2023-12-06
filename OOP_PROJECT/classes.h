@@ -38,3 +38,17 @@ class Attendance
     Attendance();
     Attendance(int,string,int);
 };
+
+
+
+class Marks
+{
+public:
+    int studentID;
+    string courseName;
+    float marks;
+
+    Marks();
+    Marks(int,string,float);
+        
+};

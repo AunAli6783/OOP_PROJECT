@@ -15,7 +15,7 @@ int validation::findStudent(int studentID)const
 }
 
 
-int validation ::findCourse(const string& courseName)
+int validation ::findCourse(const string& courseName)const
 {
     for (int i = 0; i < MAX_COURSES; ++i)
     {

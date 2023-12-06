@@ -26,3 +26,14 @@ Attendance::Attendance(int id, string cname, int present)
     courseName = cname;
     daysPresent=present;
 }
+
+
+
+Marks::Marks() : studentID(0), marks(0.0) {}
+
+Marks::Marks(int id, string cname, float m)
+{
+    studentID=id;
+    courseName=cname;
+    marks = m;
+}

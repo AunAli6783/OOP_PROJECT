@@ -106,7 +106,7 @@ system::system() //:studentCount(0)
 }
 
 
-void system::displayAvailableCourses()
+void system::displayAvailableCourses()const
 {
 	cout << "Available Courses:\n";
 	for (int i = 0; i < MAX_COURSES; ++i)
@@ -135,27 +135,32 @@ void system::registerCourse()
 		cout << "Enter the number of the course to register: ";
 		cin >> courseIndex;
 
-		if (courseIndex >= 1 && courseIndex <= MAX_COURSES) {
+		if (courseIndex >= 1 && courseIndex <= MAX_COURSES)
+		{
 			Course& selectedCourse = courses[courseIndex - 1];
-
+		
 			// Check if the course is enrolled
-			if (!selectedCourse.enrolled)
+			if (!(selectedCourse.enrolled))
 			{
 				selectedCourse.enrolled = true;
 				// Assuming each student can register for a course only once
-				if (!courseEnrollment[studentIndex][courseIndex - 1]) {
-					courseEnrollment[studentIndex][courseIndex - 1] = true;
+				if (!courseEnrollment[studentIndex][courseIndex-1])
+				{
+					courseEnrollment[studentIndex][courseIndex-1] = true;
 					cout << "Course registration successful.\n";
 				}
-				else {
+				else
+				{
 					cout << "You are already enrolled in this course.\n";
 				}
 			}
-			else {
+			else
+			{
 				cout << "Course not found or not enrolled.\n";
 			}
 		}
-		else {
+		else
+		{
 			cout << "Invalid course number.\n";
 		}
 	}
@@ -164,7 +169,7 @@ void system::registerCourse()
 	cout << endl;
 }
 
-void system::displayEnrolledCourses()
+void system::displayEnrolledCourses()const
 {
 	int studentID;
 
@@ -208,7 +213,7 @@ void system::displayEnrolledCourses()
 }
 
 
-void system::displayAttendance()
+void system::displayAttendance()const
 {
 	int studentID;
 	cout << "Enter student ID to display attendance: ";
@@ -224,9 +229,6 @@ void system::displayAttendance()
 
 			for (int i = 0; i < MAX_COURSES; ++i)
 			{
-				if (courseEnrollment[studentIndex][i] != 0)
-				{
-
 
 					int attendanceIndex = studentIndex * MAX_COURSES + i;
 
@@ -235,16 +237,8 @@ void system::displayAttendance()
 					{
 						cout << "Course: " << courses[i].courseName << ", Days Present: " << attendance[attendanceIndex].daysPresent << "\n";
 					}
-				}
-				else
-				{
-					cout << "The Student is not Enrolled in any Subject" << endl;
-					break;
-				}
 
 			}
-		
-
 		
 	}
 	else
@@ -298,3 +292,31 @@ void system :: markAttendance()
 	}
 }
 
+void system:: displayMarks()
+{
+	int studentID;
+	cout << "Enter student ID to display marks: ";
+	cin >> studentID;
+
+	int studentIndex = findStudent(studentID);
+
+	if (studentIndex != -1) 
+	{
+		cout << "Marks for " << students[studentIndex].name << ":\n";
+
+		for (int i = 0; i < MAX_COURSES; ++i)
+		{
+			int markindex = studentIndex * MAX_COURSES + i;
+
+			// Check if the course is enrolled before displaying marks
+			if (courses[i].enrolled && courseEnrollment[studentIndex][i])
+			{
+				cout << "Course: " << courses[i].courseName << ", Marks: " << marks[markindex].marks << "\n";
+			}
+		}
+	}
+	else 
+	{
+		cout << "Student not found.\n";
+	}
+}
