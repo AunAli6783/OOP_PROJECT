@@ -142,10 +142,10 @@ void managementsystem::courseWithdrawMenu() {
 
         switch (choice) {
         case 1:
-            //displayEnrolledCourses();
+            displayEnrolledCourses();
             break;
         case 2:
-           // dropCourse();
+            dropCourse();
             break;
         case 3:
             void run();

@@ -1,11 +1,13 @@
 
 #include "system.h"
+#include<fstream>
 using namespace std;
 
 void system::addStudent()
 {
 	string name;
 	int studentID;
+
 
 	if (studentCount < MAX_STUDENTS) {
 		cout << "Enter student name: ";
@@ -359,3 +361,38 @@ void system:: displayMarks()
 	}
 }
 
+ void system::dropCourse()
+ {
+	 int studentID;
+	 string courseName;
+
+	 cout << "Enter student ID: ";
+	 cin >> studentID;
+
+	 int studentIndex = findStudent(studentID);
+
+	 if (studentIndex != -1)
+	 {
+		 cout << "Enter course name to drop: ";
+		 cin >> courseName;
+
+		 int courseIndex = findCourse(courseName);
+
+		 if (courseIndex != -1 && courseEnrollment[studentIndex][courseIndex])
+		 {
+			 // Unenroll the student from the course
+			 courseEnrollment[studentIndex][courseIndex] = false;
+
+			 // Displaying a message about the dropped course
+			 cout << "Course " << courseName << " dropped successfully.\n";
+		 }
+		 else
+		 {
+			 cout << "Course not found or not enrolled.\n";
+		 }
+	 }
+	 else 
+	 {
+		 cout << "Student not found.\n";
+	 }
+ }

@@ -27,5 +27,6 @@ class system:public validation
 	void displayMarks();
 	void assignMarks();
 
+	void dropCourse();
 };
 
