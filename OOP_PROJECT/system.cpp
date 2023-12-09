@@ -3,20 +3,25 @@
 #include<fstream>
 using namespace std;
 
+ofstream write;
 void system::addStudent()
 {
 	string name;
 	int studentID;
 
+	write.open("save.txt",ios::app);
 
-	if (studentCount < MAX_STUDENTS) {
+	if (studentCount < MAX_STUDENTS)
+	{
 		cout << "Enter student name: ";
 		cin >> name;
-
+		write << "Name : ";
+		write << name<<endl;
 		// Assuming student IDs are unique for simplicity
 		cout << "Enter student ID: ";
 		cin >> studentID;
-
+		write << "ID :";
+		write << studentID << endl;
 		// Check if the student is not already enrolled
 		if (findStudent(studentID) == -1) {
 			students[studentCount++] = Student(name, studentID);
@@ -382,6 +387,7 @@ void system:: displayMarks()
 		 {
 			 // Unenroll the student from the course
 			 courseEnrollment[studentIndex][courseIndex] = false;
+			 
 
 			 // Displaying a message about the dropped course
 			 cout << "Course " << courseName << " dropped successfully.\n";
