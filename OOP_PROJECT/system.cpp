@@ -34,6 +34,7 @@ void system::addStudent()
 	else {
 		cout << "Maximum number of students reached.\n";
 	}
+	write.close();
 }
 
 void system::displayEnrolledStudents() const
@@ -73,6 +74,7 @@ void system::removeStudent()
 void system::editStudentDetails()
 {
 	int studentID;
+	write.open("save.txt", ios::app);
 
 	cout << "Enter student ID to edit details: ";
 	cin >> studentID;
@@ -81,14 +83,18 @@ void system::editStudentDetails()
 
 	if (index != -1)
 	{
+		
 		cout << "Enter new name: ";
 		cin >> students[index].name;
+		write << "Edited Student Name :";
+		write << students[index].name << endl;
 		cout << "Student details updated successfully.\n";
 	}
 	else
 	{
 		cout << "Student with ID " << studentID << " not found.\n";
 	}
+	write.close();
 }
 
 system::system() //:studentCount(0)
@@ -133,6 +139,7 @@ void system::registerCourse()
 {
 	int courseIndex;
 	int sid;
+	write.open("save.txt", ios::app);
 
 	cout << "Enter the student ID: ";
 	cin >> sid;
@@ -155,6 +162,10 @@ void system::registerCourse()
 				{
 					courseEnrollment[studentIndex][courseIndex-1] = true;
 					cout << "Course registration successful.\n";
+
+					write << "Register Course for Student " << sid <<" :";
+					write << courseIndex << endl;
+
 				}
 				else
 				{
@@ -174,6 +185,7 @@ void system::registerCourse()
 	else
 		cout << "The Student ID you Entered is not registered" << endl;
 	cout << endl;
+	write.close();
 }
 
 void system::displayEnrolledCourses()const
@@ -259,6 +271,7 @@ void system :: markAttendance()
 	int studentID;
 	string courseName;
 	int daysPresent;
+	write.open("save.txt", ios::app);
 
 	cout << "Enter student ID: ";
 	cin >> studentID;
@@ -282,6 +295,9 @@ void system :: markAttendance()
 			{
 				attendance[studentIndex * MAX_COURSES + courseIndex] = Attendance(studentID, courseName, daysPresent);
 				cout << "Attendance marked successfully.\n";
+
+				write << "Attendace of Student with ID " << studentID << " In the course " << courseName << " :";
+				write << daysPresent << endl;
 			}
 			else
 			{
@@ -297,6 +313,7 @@ void system :: markAttendance()
 	{
 		cout << "Student not found.\n";
 	}
+	write.close();
 }
 
 void system:: displayMarks()
@@ -333,6 +350,7 @@ void system:: displayMarks()
 	int studentID;
 	string courseName;
 	float studentMarks;  // Use a different name for the variable to store marks
+	write.open("save.txt", ios::app);
 
 	cout << "Enter student ID: ";
 	cin >> studentID;
@@ -354,6 +372,9 @@ void system:: displayMarks()
 			// Use a different name for the variable to store marks
 			marks[studentIndex * MAX_COURSES + courseIndex] = Marks(studentID, courseName, studentMarks);
 			cout << "Marks assigned successfully.\n";
+
+			write << "Marks of Student with ID " << studentID << " In the Course " << courseName<<" :";
+			write << studentMarks << endl;
 		}
 		else 
 		{
@@ -364,12 +385,14 @@ void system:: displayMarks()
 	{
 		cout << "Student not found.\n";
 	}
+			write.close();
 }
 
  void system::dropCourse()
  {
 	 int studentID;
 	 string courseName;
+	 write.open("save.txt", ios::app);
 
 	 cout << "Enter student ID: ";
 	 cin >> studentID;
@@ -391,6 +414,7 @@ void system:: displayMarks()
 
 			 // Displaying a message about the dropped course
 			 cout << "Course " << courseName << " dropped successfully.\n";
+			 write << "Student with ID " << studentID << "Dropped the subject :" << courseName << endl;
 		 }
 		 else
 		 {
@@ -401,4 +425,6 @@ void system:: displayMarks()
 	 {
 		 cout << "Student not found.\n";
 	 }
+	 write.close();
  }
+ 
