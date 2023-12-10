@@ -12,3 +12,6 @@ Name : aun
 ID :1
 Name : aun
 ID :1
+Name : aun
+ID :1
+Register Course for Student 1 :10

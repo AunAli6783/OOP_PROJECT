@@ -141,6 +141,7 @@
     <ClInclude Include="validation.h" />
   </ItemGroup>
   <ItemGroup>
+    <Text Include="course_data.txt" />
     <Text Include="input.txt" />
     <Text Include="save.txt" />
     <Text Include="student_data.txt" />

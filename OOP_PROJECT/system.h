@@ -31,5 +31,6 @@ class system:public validation
 	void dropCourse();
 
 	void readStudentData(string);
+	void readCourseData(string);
 };
 

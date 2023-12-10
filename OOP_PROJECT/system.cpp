@@ -1,6 +1,7 @@
 
 #include "system.h"
 #include<fstream>
+
 using namespace std;
 
 ofstream write;
@@ -112,7 +113,7 @@ system::system() //:studentCount(0)
 	courses[9] = Course("OOP");
 
 	readStudentData("student_data.txt");  // Replace with your actual file name
-
+	readCourseData("course_data.txt");
 
 
 	for (int i = 0; i < MAX_STUDENTS; ++i) {
@@ -120,6 +121,16 @@ system::system() //:studentCount(0)
 			courseEnrollment[i][j] = false;
 		}
 	}
+
+	for (int i = 0; i < MAX_STUDENTS; ++i) {
+		for (int j = 0; j < MAX_COURSES; ++j) {
+			// Check if the course is enrolled
+			if (courses[j].enrolled) {
+				courseEnrollment[i][j] = true;
+			}
+		}
+	}
+
 	cout << endl;
 }
 
@@ -151,6 +162,34 @@ void system:: readStudentData(string filename)
 		}
 		else
 			cout << "Student with ID " << id << " is already Enrolled" << endl;
+	}
+
+	inputfile.close();
+}
+
+void system::readCourseData(string filename)
+{
+	ifstream inputfile(filename);
+
+	if (!inputfile.is_open())
+	{
+		cout << "Error opening the file : " << filename << endl;
+		return;
+	}
+
+	for (int i = 0; i < MAX_COURSES; ++i)
+	{
+		string courseName;
+		inputfile >> courseName;
+
+		if (inputfile.fail())
+		{
+			break;
+		}
+
+	   courses[i] = Course(courseName);
+	   courses[i].enrolled = true;
+
 	}
 
 	inputfile.close();
