@@ -1,17 +1,1 @@
-Name : aun
-ID :1
-Name : ali
-ID :2
-Register Course for Student 1 :1
-Register Course for Student 2 :2
-Attendace of Student with ID 1 In the course Math :10
-Attendace of Student with ID 2 In the course Physics :5
-Marks of Student with ID 1 In the Course Math :100
-Marks of Student with ID 2 In the Course Physics :200
-Name : aun
-ID :1
-Name : aun
-ID :1
-Name : aun
-ID :1
-Register Course for Student 1 :10
+Student with ID 1Dropped the subject :Math

@@ -189,11 +189,46 @@ void system::readCourseData(string filename)
 
 	   courses[i] = Course(courseName);
 	   courses[i].enrolled = true;
+	   readMarksAndAttendanceData(inputfile, i);
 
 	}
 
 	inputfile.close();
 }
+
+
+void system:: readMarksAndAttendanceData(ifstream& inputFile, int courseIndex)
+{
+	for (int i = 0; i < MAX_STUDENTS && !inputFile.eof(); ++i)
+	{
+		int studentID;
+		string courseName;
+		float studentMarks;
+		int daysPresent;
+
+		inputFile >> studentID >> courseName >> studentMarks >> daysPresent;
+
+		if (inputFile.fail())
+		{
+			break;
+		}
+
+		int studentIndex = findStudent(studentID);
+
+		if (studentIndex != -1 && courseIndex != -1 && courses[courseIndex].enrolled)
+		{
+			// Update marks and attendance data for the specific student and course
+			marks[studentIndex * MAX_COURSES + courseIndex] = Marks(studentID, courseName, studentMarks);
+			attendance[studentIndex * MAX_COURSES + courseIndex] = Attendance(studentID, courseName, daysPresent);
+		}
+		else
+		{
+			cout << "Invalid student ID or course name in the file.\n";
+		}
+	}
+}
+
+
 
 
 void system::displayAvailableCourses()const

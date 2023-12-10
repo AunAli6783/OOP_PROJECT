@@ -8,9 +8,9 @@ class system:public validation
 {
  public:
 	 Attendance attendance[MAX_STUDENTS];
-	bool courseEnrollment[MAX_STUDENTS][MAX_COURSES];
-	Marks marks[MAX_STUDENTS]; 
-	Course courses[MAX_COURSES];
+	 bool courseEnrollment[MAX_STUDENTS][MAX_COURSES];
+	 Marks marks[MAX_STUDENTS]; 
+	
 
 	system();
 	void displayEnrolledStudents()const;
@@ -32,5 +32,6 @@ class system:public validation
 
 	void readStudentData(string);
 	void readCourseData(string);
+	void readMarksAndAttendanceData(ifstream&,int);
 };
 
