@@ -10,6 +10,7 @@ class system:public validation
 	 Attendance attendance[MAX_STUDENTS];
 	bool courseEnrollment[MAX_STUDENTS][MAX_COURSES];
 	Marks marks[MAX_STUDENTS]; 
+	Course courses[MAX_COURSES];
 
 	system();
 	void displayEnrolledStudents()const;
@@ -28,5 +29,7 @@ class system:public validation
 	void assignMarks();
 
 	void dropCourse();
+
+	void readStudentData(string);
 };
 

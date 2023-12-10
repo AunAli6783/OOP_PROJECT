@@ -31,7 +31,8 @@ void system::addStudent()
 			cout << "Student with ID " << studentID << " is already enrolled.\n";
 		}
 	}
-	else {
+	else
+	{
 		cout << "Maximum number of students reached.\n";
 	}
 	write.close();
@@ -110,12 +111,49 @@ system::system() //:studentCount(0)
 	courses[8] = Course("COAL");
 	courses[9] = Course("OOP");
 
+	readStudentData("student_data.txt");  // Replace with your actual file name
+
+
+
 	for (int i = 0; i < MAX_STUDENTS; ++i) {
 		for (int j = 0; j < MAX_COURSES; ++j) {
 			courseEnrollment[i][j] = false;
 		}
 	}
 	cout << endl;
+}
+
+void system:: readStudentData(string filename)
+{
+	ifstream inputfile(filename);
+
+	if (!inputfile.is_open())
+	{
+		cout << "Error opening the file : "<<filename<<endl;
+		return;
+	}
+
+	while (!inputfile.eof() && studentCount < MAX_STUDENTS)
+	{
+		string name;
+		int id;
+
+		inputfile >> name >> id;
+
+		if (inputfile.fail())
+		{
+			break;
+		}
+
+		if (findStudent(id) == -1)
+		{
+			students[studentCount++] = Student(name, id);
+		}
+		else
+			cout << "Student with ID " << id << " is already Enrolled" << endl;
+	}
+
+	inputfile.close();
 }
 
 
