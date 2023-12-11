@@ -4,6 +4,7 @@
 
 using namespace std;
 
+
 ofstream write;
 void system::addStudent()
 {
@@ -116,18 +117,30 @@ system::system() //:studentCount(0)
 	readCourseData("course_data.txt");
 
 
-	for (int i = 0; i < MAX_STUDENTS; ++i) {
-		for (int j = 0; j < MAX_COURSES; ++j) {
+	for (int i = 0; i < MAX_STUDENTS; ++i)
+	{
+		for (int j = 0; j < MAX_COURSES; ++j)
+		{
 			courseEnrollment[i][j] = false;
 		}
 	}
-
-	for (int i = 0; i < MAX_STUDENTS; ++i) {
-		for (int j = 0; j < MAX_COURSES; ++j) {
+	bool k = true;
+	for (int i = 0; i < MAX_STUDENTS; ++i ) 
+	{
+		for (int j = 0; j < MAX_COURSES; ++j)
+		{
 			// Check if the course is enrolled
-			if (courses[j].enrolled) {
+			if (courses[j].enrolled)
+			{
 				courseEnrollment[i][j] = true;
+				k = false;
+				break;
 			}
+			
+		}
+		if (k == false)
+		{
+			break;
 		}
 	}
 
@@ -189,6 +202,7 @@ void system::readCourseData(string filename)
 
 	   courses[i] = Course(courseName);
 	   courses[i].enrolled = true;
+	  // courseEnrollment[1][0] = true;
 	   readMarksAndAttendanceData(inputfile, i);
 
 	}
@@ -227,8 +241,6 @@ void system:: readMarksAndAttendanceData(ifstream& inputFile, int courseIndex)
 		}
 	}
 }
-
-
 
 
 void system::displayAvailableCourses()const
