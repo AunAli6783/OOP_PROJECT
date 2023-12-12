@@ -45,7 +45,7 @@ void system::displayEnrolledStudents() const
 	cout << "Enrolled Students:\n";
 	for (int i = 0; i < studentCount; ++i)
 	{
-		std::cout << "Student ID: " << students[i].studentID << ", Name: " << students[i].name << "\n";
+		cout << "Student ID: " << students[i].studentID << ", Name: " << students[i].name << "\n";
 	}
 	cout << "\n";
 }

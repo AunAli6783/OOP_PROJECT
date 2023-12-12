@@ -1,27 +1,9 @@
-Student with ID 1Dropped the subject :Math
-Name : aun
-ID :1
 Name : ali
 ID :2
-Name : ali
-ID :2
-Edited Student Name :ahmad
+Edited Student Name :ali
 Register Course for Student 1 :2
 Register Course for Student 1 :3
-Register Course for Student 2 :5
 Attendace of Student with ID 1 In the course Physics :100
-Attendace of Student with ID 2 In the course Math :10
-Attendace of Student with ID 2 In the course ComputerScience :12
-Marks of Student with ID 1 In the Course Math :16
-Marks of Student with ID 2 In the Course Math :100
-Student with ID 1Dropped the subject :Physics
-Student with ID 2Dropped the subject :ComputerScience
-Name : ali
-ID :2
-Name : ali
-ID :2
-Register Course for Student 2 :2
-Attendace of Student with ID 2 In the course Physics :19
-Marks of Student with ID 2 In the Course Physics :18
-Student with ID 1Dropped the subject :Math
-Student with ID 2Dropped the subject :Physics
+Marks of Student with ID 1 In the Course Physics :19
+Marks of Student with ID 1 In the Course Chemistry :19
+Student with ID 1Dropped the subject :Chemistry
