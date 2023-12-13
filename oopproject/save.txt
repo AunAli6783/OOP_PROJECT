@@ -7,17 +7,3 @@ Attendace of Student with ID 1 In the course Physics :100
 Marks of Student with ID 1 In the Course Physics :19
 Marks of Student with ID 1 In the Course Chemistry :19
 Student with ID 1Dropped the subject :Chemistry
-Name : ali
-ID :2
-Name : ali
-ID :2
-Name : ali
-ID :2
-Name : ahamd
-ID :3
-Name : kashif
-ID :3
-Name : kahsif
-ID :3
-Name : ali
-ID :2

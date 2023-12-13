@@ -124,7 +124,6 @@ system::system() //:studentCount(0)
 			courseEnrollment[i][j] = false;
 		}
 	}
-	//int k = 0;
 	bool k = true;
 	for (int i = 0; i < MAX_STUDENTS; ++i ) 
 	{
@@ -134,31 +133,18 @@ system::system() //:studentCount(0)
 			if (courses[j].enrolled)
 			{
 				courseEnrollment[i][j] = true;
-				//k = false;
-				//break;
-			/*	if (k == 2)
-				{
-
-			    break;
-				}
-
-			k++;
-			   i++;*/
-				
+				k = false;
+				break;
 			}
 			
 		}
-	/*	if (k == 2)
-		{
-			break;
-		}*/
 		if (k == false)
 		{
 			break;
 		}
 	}
 
-	cout<< endl;
+	cout << endl;
 }
 
 void system:: readStudentData(string filename)
